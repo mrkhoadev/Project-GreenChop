@@ -1,0 +1,207 @@
+// product
+.product {
+    &-content {
+        margin-top: 50px;
+    }
+    .product-content__wrap {
+        .row {
+            row-gap: 96.02px;
+            [class^="col-"]:nth-child(3n + 2) {
+                .product-item {
+                    .product-item__img {
+                        &::before {
+                            background-color: $productBg2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-item {
+        max-width: 269.316px;
+        min-width: 250px;
+        margin: auto;
+    }
+    &-item__img {
+        width: 100%;
+        padding: 65% 0;
+        position: relative;
+        img {
+            width: 90%;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 0;
+            border-radius: 50%;
+            width: 100%;
+            height: 0;
+            padding: 50% 0;
+            background-color: $productBg1;
+        }
+    }
+    &-link {
+        display: block;
+    }
+    &-item__title {
+        position: relative;
+        padding: 17.19px 0;
+
+        span {
+            display: block;
+        }
+
+        &::after {
+            content: "";
+            width: 40.833px;
+            height: 0px;
+            border-bottom: 1.667px solid $sectionBorder;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &-item__text {
+        color: $productText;
+        margin-top: 16.67px;
+    }
+    &__price {
+        display: inline-block;
+        margin-top: 6.63px;
+        span {
+            font-size: 2.3rem;
+            font-weight: 600;
+            line-height: 1.266;
+        }
+    }
+}
+
+.btn-product {
+    padding: 13.333px 11.667px;
+    font-weight: 700;
+    font-family: $font;
+    font-size: $fontSize;
+    color: $btnClr;
+    border-radius: 6.667px;
+    background-color: $btnBg;
+    margin: 31px auto 0;
+    cursor: pointer;
+}
+
+// <========== Responsive ==========>
+
+@media screen and (max-width: #{map-get($breakpoints, 'xxl')}px) {
+}
+@media screen and (max-width: #{map-get($breakpoints, 'xl')}px) {
+}
+@media screen and (max-width: #{map-get($breakpoints, 'lg')}px) {
+    .product {
+        &-content {
+            &__wrap {
+                .row [class^="col-"] {
+                    min-width: 210px;
+                }
+            }
+        }
+        &-item {
+            width: 173.33px;
+            min-width: auto;
+
+            &__title {
+                font-size: 1.6rem;
+            }
+            &__text {
+                font-size: 12px;
+            }
+        }
+        &__price {
+            font-size: 14px;
+
+            span {
+                font-size: 16px;
+            }
+        }
+    }
+    .btn-product {
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: #{map-get($breakpoints, 'md')}px) {
+    .product {
+        &-content {
+            padding: 0;
+            &__wrap {
+                .row {
+                    [class^="col-"] {
+                        min-width: 155px;
+                    }
+                }
+            }
+        }
+        &-item {
+            width: auto;
+            min-width: auto;
+
+            &__title {
+                font-size: 1.4rem;
+            }
+            &__text {
+                font-size: 11px;
+            }
+        }
+        &__price {
+            font-size: 13px;
+
+            span {
+                font-size: 14px;
+            }
+        }
+    }
+    .btn-contact {
+        margin-left: 0px;
+        margin-right: 0;
+    }
+}
+@media screen and (max-width: #{map-get($breakpoints, 'sm')}px) {
+    .product {
+        &-title {
+            text-align: center;
+        }
+        &-content {
+            &__wrap {
+                text-align: center;
+                .row {
+                    justify-content: space-evenly;
+                    row-gap: 10px;
+                }
+            }
+        }
+        &-item {
+            width: 125px;
+            min-width: auto;
+
+            &__title {
+                font-size: 1.1rem;
+            }
+            &__text {
+                font-size: 0.9rem;
+            }
+        }
+        &__price {
+            font-size: 1.1rem;
+
+            span {
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .btn-product {
+        font-size: 1rem;
+    }
+}

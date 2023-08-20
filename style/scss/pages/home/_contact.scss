@@ -1,0 +1,122 @@
+// contact
+.contact {
+    &-wrap {
+        margin-top: 33px;
+        margin-bottom: 68px;
+    }
+    &-img {
+        position: relative;
+        max-width: 451.667px;
+        height: 380.833px;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 439.167px;
+            height: 439.167px;
+            border-radius: 50%;
+            background-color: $sectionBg1;
+            right: -34.17px;
+            bottom: -117.5px;
+        }
+    }
+    &-content {
+        margin-top: 55px;
+        text-align: left;
+    }
+    &-content__title {
+        font-weight: 600;
+        line-height: 1.26;
+        span {
+            display: block;
+        }
+    }
+}
+.form-box {
+    margin-top: 26px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 22.67px;
+}
+.input-box {
+    position: relative;
+    background-color: $inputBg;
+    border-radius: 6.667px;
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    input {
+        width: 100%;
+        border: 1px solid $sectionBorder;
+        padding: 13.333px;
+        border-radius: 6.667px;
+        font-size: $font;
+        font-size: $fontSize;
+        font-weight: 400;
+    }
+    label {
+        position: absolute;
+        left: 13.333px;
+        top: 50%;
+        font-weight: 400;
+        transform: translateY(-50%);
+        color: $sectionText;
+        background-color: inherit;
+        padding: 0 5px;
+    }
+    textarea {
+        @extend input;
+        height: 150px;
+        resize: none;
+        + label {
+            top: 24px;
+        }
+    }
+}
+.btn-contact {
+    font-family: $font;
+    font-size: $fontSize;
+    font-weight: 700;
+    color: $btnClr;
+    border-radius: 6.667px;
+    padding: 13.333px 50px;
+    margin-left: auto;
+    margin-right: 10px;
+    background-color: $btnBg;
+    cursor: pointer;
+}
+
+// <========== Responsive ==========>
+
+@media screen and (max-width: #{map-get($breakpoints, 'xxl')}px) {
+}
+@media screen and (max-width: #{map-get($breakpoints, 'xl')}px) {
+}
+@media screen and (max-width: #{map-get($breakpoints, 'lg')}px) {
+}
+@media screen and (max-width: #{map-get($breakpoints, 'md')}px) {
+    .contact {
+        &-img {
+            display: none;
+        }
+    }
+    .btn-contact {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media screen and (max-width: #{map-get($breakpoints, 'sm')}px) {
+    .form {
+        .row {
+            row-gap: 20px;
+        }
+    }
+}

@@ -1,0 +1,215 @@
+.reviews {
+    &-txt {
+        max-width: 660px;
+        padding: 0 20px;
+        margin: 48px auto 0;
+    }
+    &-title {
+        max-width: 500px;
+        margin: auto;
+    }
+    &-text {
+        margin: 24.33px auto 9.55px;
+    }
+    &-content {
+        position: relative;
+        padding: 90px 0px 114.17px;
+        width: 100%;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 235px;
+            height: 235px;
+            border-radius: 50%;
+            z-index: -1;
+        }
+        &::before {
+            background-color: $sectionBg2;
+            top: 0;
+            left: 0;
+        }
+        &::after {
+            background-color: $sectionBg1;
+            right: 0;
+            bottom: 0;
+        }
+        .row {
+            justify-content: center;
+            column-gap: 10px;
+            @extend .align-items-center;
+            [class^="col-"] {
+                flex-basis: 324.167px;
+            }
+        }
+    }
+    &-item {
+        text-align: left;
+        padding: 33.33px 33.33px 58.83px;
+        border-radius: 3.333px;
+        background: #fff;
+        box-shadow: -5.8333330154418945px 8.333333015441895px 72.5px 0px
+            rgba(54, 54, 54, 0.12);
+    }
+    &-item__img {
+        width: 83.333px;
+        height: 83.333px;
+        border-radius: 10px;
+        background-color: $sectionBg1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 45px;
+            height: 45px;
+        }
+    }
+    &-item__txt {
+        margin-top: 23.33px;
+    }
+    &-item__number {
+        font-size: 4.3rem;
+        font-weight: 800;
+        color: $textColor;
+    }
+    &-item__text {
+        margin-top: 23.33px;
+        font-size: 2rem;
+        line-height: 1.38;
+    }
+}
+.reviews--center {
+    height: 392.5px;
+    flex-basis: 342.5px;
+    flex-shrink: 0;
+
+    
+}
+.reviews--item-center {
+    height: 100%;
+    .reviews-item__img {
+        background-color: $sectionBg3;
+    }
+}
+
+// <========== Responsive ==========>
+
+@media screen and (max-width: #{map-get($breakpoints, 'xxl')}px) {
+
+}
+@media screen and (max-width: #{map-get($breakpoints, 'xl')}px) {
+    .reviews {
+        &-text {
+            margin-top: 14px;
+        }
+        &-content {
+            .row {
+                [class^="col-"] {
+                    flex-basis: 260px;
+                }
+            }
+            &::before,
+            &::after {
+                width: 200px;
+                height: 200px;
+            }
+            &::before {
+                left: 10px;
+            }
+            &::after {
+                right: 10px;
+            }
+        }
+        &-item {
+            padding: 30px 30px 55px;
+
+            &__img {
+                width: 70px;
+                height: 70px;
+            }
+            &__number {
+                font-size: 4rem;
+            }
+            &__text {
+                font-size: $fontSize;
+            }
+        }
+    }
+    .reviews--center {
+        height: 325px;
+        flex-basis: 270px;
+        flex-shrink: 0;
+    }
+}
+
+@media screen and (max-width: #{map-get($breakpoints, 'lg')}px) {
+    .reviews {
+        &-content {
+            .row {
+                flex-wrap: nowrap;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: #{map-get($breakpoints, 'md')}px) {
+    .reviews {
+        &-content {
+            .row {
+                flex-wrap: wrap;
+                row-gap: 20px; 
+                [class^="col-"] {
+                    flex-basis: var(--column-width);
+                    justify-content: center;
+                }
+            }
+        }
+        &-item {
+            margin: auto;
+            width: 520px;
+            padding: 30px;
+            &__txt {
+                margin-top: 10px;
+            }   
+        }
+    }
+    .reviews--center {
+        flex-basis: var(--column-width);
+        height: auto;
+    }
+    .reviews--item-center {
+        width: 540px;
+        padding: 30px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: #{map-get($breakpoints, 'sm')}px) {
+    .reviews {
+        &-content {
+            .row {
+                margin: 0;
+            }
+        }
+        &-txt {
+            margin-top: 0;
+            width: 100%;
+            padding: 0;
+        }
+        &-item {
+            width: 100%;
+            padding: 30px;
+        }
+        &-title {
+            margin-left: 0;
+            max-width: 450px;
+        }
+        &-content {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    .reviews--center {
+        width: 100%;
+    }
+}

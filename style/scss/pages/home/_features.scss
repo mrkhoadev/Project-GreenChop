@@ -1,0 +1,63 @@
+// features
+.features {
+    &-content {
+        margin-top: 83.31px;
+        .row {
+            row-gap: 38.83px;
+        }
+    }
+    &-item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        column-gap: 15.83px;
+
+        &__img {
+            min-width: 55.833px;
+            width: 55.833px;
+            min-height: 55.833px;
+            height: 55.833px;
+        }
+        &__txt {
+            text-align: left;
+            width: 216.667px;
+        }
+        &__text {
+            margin: 6.667px 0;
+            font-size: 1.7rem;
+            font-weight: 500;
+        }
+    }
+}
+
+// <========== Responsive ==========>
+
+@media screen and (max-width: #{map-get($breakpoints, 'xxl')}px) {
+}
+@media screen and (max-width: #{map-get($breakpoints, 'xl')}px) {
+}
+@media screen and (max-width: #{map-get($breakpoints, 'lg')}px) {
+    .features {
+        &-item {
+            &__txt {
+                width: 100%;
+            }
+        }
+    }
+}
+@media screen and (max-width: #{map-get($breakpoints, 'md')}px) {
+    .features {
+        &-item {
+            justify-content: flex-start;
+        }
+    }
+}
+@media screen and (max-width: #{map-get($breakpoints, 'sm')}px) {
+    .features {
+        &-item {
+            &__txt {
+                width: 100%;
+            }
+        }
+    }
+}

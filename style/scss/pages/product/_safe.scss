@@ -1,0 +1,173 @@
+.safe {
+    &-txt {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: 10px;
+        text-align: left;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            width: 162.5px;
+            height: 169.167px;
+            background-image: url("../../assets/images/pages/product/safe-item2.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            top: -40px;
+            left: -75px;
+            z-index: -1;
+        }
+        &__title {
+            // max-width: 550px;
+            span {
+                display: block;
+            }
+        }
+        &__text {
+            margin-top: 15.17px;
+            max-width: 366px;
+        }
+    }
+    &-img {
+        &__wrap {
+            width: 390.833px;
+            height: 281.667px;
+            box-shadow: 15.833333015441895px 63.33333206176758px 75px
+                rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            margin: 57.5px auto 58.33px 0;
+            position: relative;
+            border-radius: 6.667px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                display: inline-block;
+                width: 406.667px;
+                height: 0px;
+                padding: 51% 0;
+                background-image: url("../../assets/images/pages/product/safe-item1.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+                z-index: -1;
+                right: -95px;
+            }
+        }
+    }
+}
+
+// <========== Responsive ==========>
+
+@media screen and (max-width: #{map-get($breakpoints, 'xxl')}px) {
+}
+@media screen and (max-width: #{map-get($breakpoints, 'xl')}px) {
+    .safe {
+        &-txt {
+            margin-right: 0px;
+
+            &::before {
+                left: -70px;
+                width: 137.5px;
+                height: 143px;
+            }
+            &__title {
+                font-size: 2.6rem;
+            }
+        }
+        &-img {
+            &__wrap {
+                width: 327px;
+                height: 235px;
+                margin-left: 3%;
+
+                &::after {
+                    width: 340px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: #{map-get($breakpoints, 'lg')}px) {
+    .safe {
+        &-txt {
+            &__title {
+                font-size: 2rem;
+            }
+        }
+        &-img {
+            &__wrap {
+                width: 245px;
+                height: 176px;
+                margin-left: 20px;
+
+                &::after {
+                    width: 255px;
+                    right: -70px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: #{map-get($breakpoints, 'md')}px) {
+    .safe {
+        &-txt {
+            margin: auto;
+
+            &::before {
+                left: -75px;
+                width: 162.5px;
+                height: 169.167px;
+            }
+            &__title {
+                font-size: 3.1rem;
+            }
+        }
+        &-img {
+            margin-top: 100px;
+            &__wrap {
+                width: 327px;
+                height: 235px;
+                margin-left: auto;
+
+                &::after {
+                    width: 340px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: #{map-get($breakpoints, 'sm')}px) {
+    .safe {
+        &-txt {
+            margin: auto;
+
+            &::before {
+                left: -75px;
+                width: 162.5px;
+                height: 169.167px;
+            }
+            &__title {
+                font-size: 2.3rem;
+            }
+        }
+        &-img {
+            margin-top: 100px;
+            &__wrap {
+                width: 245px;
+                height: 176px;
+
+                &::after {
+                    width: 255px;
+                    right: -50px;
+                }
+            }
+        }
+    }
+}

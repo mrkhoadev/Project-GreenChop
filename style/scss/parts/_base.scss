@@ -1,0 +1,51 @@
+.container {
+    --container-width: 1230px;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+@mixin center($type) {
+    @if ($type == display) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } @else if ($type == position) {
+        position: relative;
+        > * {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    } @else if ($type == text) {
+        > * {
+            text-align: center;
+        }
+    } @else if ($type == margin) {
+        > * {
+            margin: 0 auto;
+        }
+    }
+}

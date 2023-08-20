@@ -1,0 +1,109 @@
+.mission {
+    &-wrap {
+        margin-top: 50px;   
+        margin-bottom: 182.98px;
+    }
+    &-img {
+        &__image {
+            position: relative; 
+            max-width: 400px;
+            left: 32.6%;
+            border-radius: 5px;
+
+            img {
+                border-radius: inherit;
+                box-shadow: -9.166666030883789px 25.833332061767578px 46.666664123535156px 0px rgba(0, 0, 0, 0.15);
+            }
+
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                border-radius: 50%;
+                z-index: -1;
+                height: 0px;
+                padding: 50% 0;
+            }
+            &::before {
+                top: 20.2%;
+                width: 100%;
+                background-color: $sectionBg2;
+                left: -50%;
+            }
+            &::after {
+                width: 55%;
+                bottom: -36.2%;
+                left: 55px;
+                padding: 27.5% 0;
+                background-color: $sectionBg4;
+            }
+        }
+    }
+    &-txt {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: left;   
+
+        &__text {
+            margin-top: 26.33px;
+            font-size: 1.3rem;
+            max-width: 400px;
+        }
+    }
+}
+
+// <========== Responsive ==========>
+
+@media screen and (max-width: #{map-get($breakpoints, 'xxl')}px) {
+}
+@media screen and (max-width: #{map-get($breakpoints, 'xl')}px) {
+    .mission {
+        &-img {
+            &__image {
+                max-width: 350px;
+            }
+        }
+    }
+}
+@media screen and (max-width: #{map-get($breakpoints, 'lg')}px) {
+    .mission {
+        &-img {
+            &__image {
+                max-width: 250px;
+            }
+        }
+    }
+}
+@media screen and (max-width: #{map-get($breakpoints, 'md')}px) {
+    .mission {
+        &-wrap {
+            margin-bottom: 100px;
+        }
+        &-txt {
+            top: 0;
+            transform: translateY(0);
+            max-width: 430px;
+            margin: auto;
+
+            &__text {
+                max-width: 100%;
+            }
+        }
+        &-img {
+            &__image {
+                max-width: 300px;
+                margin-bottom: 120px;    
+            }
+        }
+    }
+}
+@media screen and (max-width: #{map-get($breakpoints, 'sm')}px) {
+    .mission {
+        &-img {
+            &__image {
+                max-width: 220px;
+                margin-bottom: 80px;    
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+:root {
+    --container-width: 1200px;
+    --column-space: 30px;
+    --container-padding: 15px;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 calc(-1 * var(--column-space) / 2);
+}
+
+.row [class^="col-"] {
+    --column-number: calc(12 / var(--column-size));
+    --column-width: calc(100% / var(--column-number));
+    flex-basis: var(--column-width);
+    max-width: var(--column-width);
+    padding: 0 calc(var(--column-space) / 2);
+}
+
+@mixin column($name: "") {
+    @for $i from 1 through 12 {
+        $prefix: ".col-";
+
+        @if ($name != "") {
+            $prefix: $prefix + $name + "-";
+        }
+
+        #{$prefix + $i} {
+            --column-size: #{$i};
+        }
+    }
+}
+
+@include column();
+
+$breakpoints: (
+    sm: 575,
+    md: 767,
+    lg: 991,
+    xl: 1200,
+    xxl: 1449,
+);
+
+$breakpoint-names: map-keys($breakpoints);
+
+@for $i from length($breakpoint-names) through 1 {
+    $name: nth($breakpoint-names, $i);
+    $breakpoint: map-get($breakpoints, $name);
+
+    @media screen and (max-width: #{$breakpoint}px) {
+        @include column($name);
+    }
+}

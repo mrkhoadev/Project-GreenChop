@@ -1,0 +1,61 @@
+main {
+    padding-top: 100px;
+    font-size: $fontSize;
+    line-height: 1.204;
+    font-weight: 400;
+    font-style: normal;
+}
+section {
+    padding: 50px 0;
+    text-align: center;
+    h1 {
+        font-size: 4.3rem;
+        font-weight: 800;
+        line-height: normal;
+        font-style: normal;
+    }
+    h2 {
+        font-size: 3.1rem;
+        font-weight: 800;
+        line-height: 1.315;
+        font-style: normal;
+    }
+    h3 {
+        font-size: 2.3rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    h4 {
+        font-size: 2rem;
+        font-weight: 600;
+        font-style: normal;
+        line-height: 1.26;
+    }
+}
+
+.main--secondary {
+    font-size: $secondaryFontSize;
+}
+
+// <========== Responsive ==========>
+
+@media screen and (max-width: #{map-get($breakpoints, 'xxl')}px) {
+}
+@media screen and (max-width: #{map-get($breakpoints, 'xl')}px) {
+    .container {
+        --container-width: 100%;
+    }
+}
+@media screen and (max-width: #{map-get($breakpoints, 'lg')}px) {
+}
+@media screen and (max-width: #{map-get($breakpoints, 'md')}px) {
+}
+@media screen and (max-width: #{map-get($breakpoints, 'sm')}px) {
+    section {
+        text-align: left;
+        h2 {
+            font-size: 2.5rem;
+        }
+    }
+}

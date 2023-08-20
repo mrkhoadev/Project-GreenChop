@@ -1,0 +1,174 @@
+.prevent {
+    overflow: hidden;
+    &-wrap {
+        margin-top: 33.33px;
+    }
+    &-item {
+        .container {
+            position: relative;
+            padding-top: 66.67px;
+
+            &::before {
+                content: '';
+                // opacity: 0.5;
+                position: absolute;
+                width: 100vw;
+                top: 0px;
+                left: 15px;
+                right: 0;
+                bottom: 24.5%;
+                background-color: $sectionBg3;
+                z-index: -1;
+            }
+        }
+        
+    }
+    &-txt {
+        &__title {
+            span {
+                display: block;
+            }
+        }
+    }
+    &-content {
+        margin-top: 49.33px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+        text-align: left;
+    }
+    &-img {
+        width: 392.5px;
+        margin-left: auto;
+        margin-right: 40px;
+        border-radius: 6.667px;
+
+        img {
+            border-radius: inherit;
+        }
+    }
+    &-txt {
+        &__text {
+            width: 520px;
+            position: relative;
+
+            &::after {
+                content: '';
+                display: inline-block;
+                width: 113.333px;
+                height: 88.333px;
+                background-image: url("../../assets/images/pages/product/prevent-item.png");
+                background-size: cover;
+                position: absolute;
+                // bottom: -108.333px;
+                bottom: -20px;
+                transform: translateY(100%);
+                right: 0;
+            }
+        }
+    }
+    .prevent--even {
+        .container {
+            &::before {
+                right: 15px;
+                left: auto;
+                background-color: $sectionBg1;
+            }
+        }
+        .row {
+            flex-direction: row-reverse;
+        }
+        
+        .prevent-img {
+            margin-left: 60px;
+            margin-right: auto;
+        }
+
+        .prevent-txt__text {
+            &::after {
+                left: 0;
+                transform: translateY(100%) rotate(180deg);
+            }
+        }
+    }
+}
+
+// <========== Responsive ==========>
+
+@media screen and (max-width: #{map-get($breakpoints, 'xxl')}px) {
+}
+@media screen and (max-width: #{map-get($breakpoints, 'xl')}px) {
+    .prevent {
+        &-item {
+            .container {
+                &::before {
+                    left: 0px;
+                }
+            }
+        }
+        &-txt {
+            &__text {
+                width: auto;
+                max-width: 520px;
+
+                &::after {
+                    width: 73px;
+                    height: 57px;
+                }
+            }
+        }
+        &-img {
+            width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+        }
+        .prevent--even {
+            .container {
+                &::before {
+                    right: 0px;
+                }
+            }
+            .prevent-img {
+            margin-left: auto;
+            margin-right: 0;
+        }
+        }
+    }
+}
+@media screen and (max-width: #{map-get($breakpoints, 'lg')}px) {
+}
+@media screen and (max-width: #{map-get($breakpoints, 'md')}px) {
+    .prevent {
+        &-item {
+            .container {
+                padding-bottom: 46.67px;
+                &::before {
+                    bottom: 0;
+                }
+            }
+        }
+        &-txt {
+            &__title {
+                text-align: center;
+            }
+        }
+    }
+}
+@media screen and (max-width: #{map-get($breakpoints, 'sm')}px) {
+    .prevent {
+        &-txt {
+            &__text {
+                max-width: 400px;
+                // margin-top: 20px;
+                text-align: justify;
+                margin: 30px auto 0;
+                &::after {
+                    display: none;
+                }
+            }
+        }
+        &-img {
+            text-align: center;
+        }
+    }
+}

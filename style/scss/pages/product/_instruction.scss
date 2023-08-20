@@ -1,0 +1,236 @@
+.instruction {
+    &-txt {
+        max-width: 380px;
+        margin: 50px auto 0;
+
+        &__title {
+            span {
+                display: block;
+            }
+        }
+        &__text {
+            margin-top: 24.33px;
+        }
+    }
+    &-box {
+        margin-top: 81.5px;
+
+        .row {
+            counter-reset: instruction-item;
+            row-gap: 30px;
+        }
+    }
+    &-item {
+        &__text {
+            min-height: 123.333px;
+            width: 135px;
+            text-align: left;
+            margin-left: auto;
+            margin-right: 0;
+            position: relative;
+            counter-increment: instruction-item;
+
+            &::before {
+                content: counter(instruction-item, decimal-leading-zero)
+                    attr(data-after);
+                position: absolute;
+                width: 117px;
+                text-align: right;
+                left: -125px;
+                top: -20px;
+                color: transparent;
+                display: inline-block;
+                font-size: 83.333px;
+                font-style: normal;
+                font-weight: 800;
+                -webkit-text-stroke: 1.667px $textColor;
+            }
+            &[data-after="10"]::before {
+                content: counter(instruction-item, decimal-leading-zero);
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                display: inline-block;
+                height: 123.333px;
+                width: 123.333px;
+                background-color: $sectionBg1;
+                border-radius: 50%;
+                left: -70px;
+                top: -31.67px;
+                z-index: -1;
+            }
+        }
+    }
+    .instruction--item1 {
+        .instruction-item__text {
+            width: 150px;
+        }
+    }
+    &-content {
+        margin-top: 100px;
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 45px;
+
+        &__item {
+            width: 653.333px;
+            height: fit-content;
+            position: relative;
+            padding: 90.83px 46.67px 51.67px 62.5px;
+            text-align: left;
+            font-size: $sectionFontSize;
+            background-color: $sectionItem;
+            filter: drop-shadow(25.833332061767578px 23.333332061767578px 103.33332824707031px rgba(0, 0, 0, 0.06));
+
+            &::before {
+                content: '';
+                position: absolute;
+                display: inline-block;
+                width: 8.333px;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: $primaryColor;
+                border-radius: 0px 8.333px 8.333px 0px;
+            }
+        }
+        &__text {
+            min-height: 207.5px;
+        }
+        &__img {
+            margin-top: 35.83px;
+            width: 588.333px;
+            border-radius: 8.333px;
+            overflow: hidden;
+            img {
+                margin-right: -1px;
+                border-radius: inherit;
+            }
+        }
+        
+    }
+}
+
+// <========== Responsive ==========>
+
+@media screen and (max-width: #{map-get($breakpoints, 'xxl')}px) {
+}
+@media screen and (max-width: #{map-get($breakpoints, 'xl')}px) {
+    .instruction {
+        &-item {
+            &__text {
+                margin-right: auto;
+                &::before {
+                    position: static;
+                    text-align: left;
+                }
+                &::after {
+                    left: -2px;
+                    top: 25px;
+                }
+            }
+            
+        }
+        &-content {
+            column-gap: 29px;
+
+            &__item {
+                width: 424px;
+                padding: 58px 29px 33px 40px;
+                font-size: $secondaryFontSize;
+            }
+            &__text {
+                min-height: 134px;
+            }
+            &__img {
+                margin-top: 22px;
+                width: 382px;
+                overflow: hidden;
+                img {
+                    margin-right: -1px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: #{map-get($breakpoints, 'lg')}px) {
+}
+@media screen and (max-width: #{map-get($breakpoints, 'md')}px) {
+    .instruction {
+        &-txt {
+            text-align: center;
+        }
+        &-item {
+            &__text {
+                margin-left: 55%;
+                margin-right: auto;
+                &::before {
+                    position: absolute;
+                    text-align: right;
+                }
+                &::after {
+                    left: -70px;
+                    top: -31.67px;
+                }
+            }
+        }
+        .instruction--item1 {
+            .instruction-item__text {
+                margin-left: 50%;
+                &::after {
+                    left: -55px;
+                    top: -31.67px;
+                }
+            }
+        }
+        &-content {
+            display: flex;
+            flex-direction: column;
+
+            &__item {
+                max-width: 653.333px;
+                width: auto;
+                padding-bottom: 90px;
+                font-size: $sectionFontSize;
+            }
+            &__img {
+                margin-top: 35px;
+                width: 100%;
+                border-radius: 8.333px;
+                overflow: hidden;
+                img {
+                    width: inherit;
+                    margin-right: -1px;
+                    border-radius: inherit;
+                }
+            }
+        }
+    }
+    
+}
+@media screen and (max-width: #{map-get($breakpoints, 'sm')}px) {
+    .instruction {
+        &-txt {
+            text-align: center;
+        }
+        &-item {
+            &__text {
+                width: 200px;
+                margin-left: 40%;
+                margin-right: auto;
+            }
+        }
+        .instruction--item1 {
+            .instruction-item__text {
+                width: 200px;
+                margin-left: 40%;
+                &::after {
+                    left: -70px;
+                    top: -31.67px;
+                }
+            }
+        }
+    }
+    
+}

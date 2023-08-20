@@ -1,0 +1,632 @@
+// Main
+.btn-product {
+    transition-property: background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    &:hover {
+        background-color: $btnHoverBg;
+    }
+    &:focus {
+        background-color: $btnClickBg;
+    }
+}
+.more-link {
+    transition-property: background-color, color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    &:hover {
+        background-color: $btnHoverBg2;
+        color: $btnClr;
+    }
+    &:focus {
+        background-color: $btnClick2;
+        color: $btnClr;
+    }
+}
+.news-item_img {
+    img {
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+        &.active {
+            transform: scale(1.2);
+        }
+        &:hover {
+            @extend .active;
+        }
+        &:focus {
+            @extend .active;
+        }
+    }
+}
+.security-item__img {
+    img {
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+        &.active {
+            transform: scale(1.2);
+        }
+        &:hover {
+            @extend .active;
+        }
+        &:focus {
+            @extend .active;
+        }
+    }
+}
+.input-box {
+    input {
+        transition-property: border-color;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+        &.active {
+            border-color: $inputBd;
+            + label {
+                font-size: 1rem;
+                top: 0;
+                color: $inputClr;
+            }
+        }
+        &:focus {
+            @extend .active;
+        }
+        &:not(:placeholder-shown) {
+            @extend .active;
+        }
+    }
+    label {
+        transition-property: font-size, top, color;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+    }
+}
+.btn-contact {
+    transition-property: background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    &:hover {
+        background-color: $btnHoverBg;
+    }
+    &:focus {
+        background-color: $btnClickBg;
+    }
+}
+
+// $breakpoints: (
+//     sm: 575,
+//     md: 767,
+//     lg: 991,
+//     xl: 1200,
+//     xxl: 1449,
+// );
+// @media screen and (max-width: #{map-get($breakpoints, 'xxl')}px) {
+//     .intro {
+//         &-txt {
+//             margin-top: 120px;
+//         }
+//         &-img {
+//             max-width: 450px;
+//         }
+//         &-bg__text {
+//             transform: rotate(90deg) translateY(-450px) translateX(-17%);
+//             font-size: 14rem;
+//         }
+//     }
+//     .product {
+//         &-content {
+//             .row {
+//                 margin: 0;
+//             }
+//         }
+//     }
+//     .news {
+//         &-wrap {
+//             padding-left: 10px;
+//             padding-right: 10px;
+//         }
+//         &-content {
+//             .row {
+//                 margin: 0;
+//             }
+//         }
+//     }
+// }
+// @media screen and (max-width: #{map-get($breakpoints, 'xl')}px) {
+//     .container {
+//         --container-width: 100%;
+//     }
+//     section {
+//         h2 {
+//             font-size: 2.7rem;
+//         }
+//         h4 {
+//             font-size: 1.7rem;
+//         }
+//         p {
+//             font-size: 1.4rem;
+//         }
+//     }
+//     .intro {
+//         &-txt {
+//             margin-top: 70px;
+//         }
+//         &-titleUp {
+//             font-size: 2.9rem;
+//         }
+//         &-titleDown {
+//             font-size: 4.1rem;
+//             max-width: 80%;
+//         }
+//         &-img {
+//             max-width: 410px;
+//         }
+//         &-bg__text {
+//             transform: rotate(90deg) translateY(-380px) translateX(-11%);
+//             font-size: 11rem;
+//         }
+//         &-text {
+//             margin-top: 17px;
+//             max-width: 85%;
+//         }
+//     }
+//     .reviews {
+//         &-txt {
+//             width: 60%;
+//         }
+//         &-text {
+//             margin-top: 14px;
+//         }
+//         &-content {
+//             .row {
+//                 [class^="col-"] {
+//                     flex-basis: 260px;
+//                 }
+//             }
+//             &::before,
+//             &::after {
+//                 width: 200px;
+//                 height: 200px;
+//             }
+//             &::before {
+//                 left: 10px;
+//             }
+//             &::after {
+//                 right: 10px;
+//             }
+//         }
+//         &-item {
+//             padding: 30px 30px 55px;
+
+//             &__img {
+//                 width: 70px;
+//                 height: 70px;
+//             }
+//             &__number {
+//                 font-size: 4rem;
+//             }
+//             &__text {
+//                 font-size: $fontSize;
+//             }
+//         }
+//     }
+//     .reviews--center {
+//         height: 325px;
+//         flex-basis: 270px;
+//         flex-shrink: 0;
+//     }
+
+//     .news {
+//         &-item__txt {
+//             margin-top: 8px;
+//             row-gap: 8px;
+//         }
+//         &-link {
+//             font-size: 1.2rem;
+//         }
+//         &-time {
+//             font-size: 1.2rem;
+//             &::before {
+//                 font-size: 1.5rem;
+//             }
+//         }
+//         &-item__text {
+//             font-size: 1.25rem;
+//         }
+//     }
+//     .more-link {
+//         font-size: 14px;
+//     }
+//     .security {
+//         &-item {
+//             max-width: 260px;
+//         }
+//     }
+// }
+// @media screen and (max-width: #{map-get($breakpoints, 'lg')}px) {
+//     .intro {
+//         &-image {
+//             position: relative;
+//             margin: 0 calc(-1 * var(--column-space) / 2);
+//             padding: 25px 0;
+//         }
+//         &-titleDown {
+//             max-width: 100%;
+//         }
+//         &-img {
+//             position: relative;
+//             margin-right: 36%;
+//             margin-left: auto;
+//             max-width: 550px;
+//             width: 500px;
+//             img {
+//                 left: 0;
+//             }
+//         }
+//         &-bg {
+//             border-radius: 0;
+//             left: 0;
+
+//             &__text {
+//                 transform: rotate(90deg) translateY(0px) translateX(-80px);
+//                 font-size: 13rem;
+//                 left: 75%;
+//             }
+//         }
+//         &-txt {
+//             margin-top: 0;
+//             max-width: 100%;
+//             width: 700px;
+//         }
+//         &-text {
+//             max-width: 100%;
+//             width: 640px;
+//         }
+//     }
+//     .reviews {
+//         &-txt {
+//             width: 580px;
+//         }
+//         &-content {
+//             .row {
+//                 flex-wrap: nowrap;
+//                 margin: 0;
+//             }
+//         }
+//     }
+//     .news {
+//         &-txt {
+//             width: 580px;
+//         }
+//     }
+//     .product {
+//         &-content {
+//             &__wrap {
+//                 .row [class^="col-"] {
+//                     min-width: 203.33px;
+//                 }
+//             }
+//         }
+//         &-item {
+//             width: 173.33px;
+//             min-width: auto;
+
+//             &__title {
+//                 font-size: 1.6rem;
+//             }
+//             &__text {
+//                 font-size: 12px;
+//             }
+//         }
+//         &__price {
+//             font-size: 14px;
+
+//             span {
+//                 font-size: 16px;
+//             }
+//         }
+//     }
+//     .btn-product {
+//         font-size: 1.2rem;
+//     }
+//     .more-link {
+//         font-size: 1.2rem;
+//         padding: 10px 20px;
+//     }
+// }
+// @media screen and (max-width: #{map-get($breakpoints, 'md')}px) {
+//     .intro {
+//         &-txt {
+//             width: 100%;
+//         }
+//         &-titleUp {
+//             font-size: 2.6rem;
+//         }
+//         &-titleDown {
+//             width: 350px;
+//             font-size: 3.6rem;
+//         }
+//         &-text {
+//             width: 100%;
+//             text-align: justify;
+//         }
+//         &-img {
+//             margin-right: 40%;
+//             width: 350px;
+//         }
+//         &-bg {
+//             &__text {
+//                 transform: rotate(90deg) translateX(-70px);
+//                 font-size: 10.5rem;
+//                 left: 75%;
+//             }
+//         }
+//     }
+//     section {
+//         h2 {
+//             font-size: 2.4rem;
+//         }
+//         p {
+//             font-size: 1.2rem;
+//         }
+//     }
+//     .reviews {
+//         &-content {
+//             .row {
+//                 flex-wrap: wrap;
+//                 [class^="col-"] {
+//                     flex-basis: var(--column-width);
+//                     justify-content: center;
+//                 }
+//             }
+//         }
+//         &-txt {
+//             width: 500px;
+//         }
+//         &-item {
+//             margin: auto;
+//             width: 520px;
+//             padding: 30px;
+//             &__txt {
+//                 margin-top: 10px;
+//             }
+//         }
+//     }
+//     .reviews--center {
+//         flex-basis: var(--column-width);
+//         height: auto;
+//     }
+//     .reviews--item-center {
+//         width: 540px;
+//         padding: 30px;
+//         height: auto;
+//     }
+//     .news {
+//         &-txt {
+//             width: 500px;
+//         }
+//         &-item {
+//             display: flex;
+//             max-width: 100%;
+//             column-gap: 20px;
+//             &__img {
+//                 width: 50%;
+//             }
+//             &__txt {
+//                 width: 50%;
+//             }
+//         }
+//     }
+//     .product {
+//         &-content {
+//             padding: 0;
+//             &__wrap {
+//                 .row {
+//                     [class^="col-"] {
+//                         min-width: 155px;
+//                     }
+//                 }
+//             }
+//         }
+//         &-item {
+//             width: auto;
+//             min-width: auto;
+
+//             &__title {
+//                 font-size: 1.4rem;
+//             }
+//             &__text {
+//                 font-size: 11px;
+//             }
+//         }
+//         &__price {
+//             font-size: 13px;
+
+//             span {
+//                 font-size: 14px;
+//             }
+//         }
+//     }
+//     .btn-contact {
+//         margin-left: 0px;
+//         margin-right: 0;
+//     }
+//     .security {
+//         &-item {
+//             max-width: 100%;
+//             display: flex;
+//             flex-direction: row-reverse;
+//             box-shadow: -5.8333330154418945px 8.333333015441895px 72.5px 0px
+//                 rgba(54, 54, 54, 0.12);
+
+//             &__img {
+//                 width: 50%;
+//                 height: fit-content;
+//             }
+//             &__txt {
+//                 width: 50%;
+//             }
+//         }
+//     }
+//     .contact {
+//         &-img {
+//             display: none;
+//         }
+//     }
+// }
+// @media screen and (max-width: #{map-get($breakpoints, 'sm')}px) {
+//     .intro {
+//         &-titleUp {
+//             font-size: 2.2rem;
+//         }
+//         &-titleDown {
+//             width: 330px;
+//             font-size: 3.3rem;
+//         }
+//         &-img {
+//             margin-right: 42%;
+//             width: 250px;
+//         }
+//         &-bg {
+//             &__text {
+//                 transform: rotate(90deg) translateX(-25px);
+//                 font-size: 7rem;
+//                 left: 80%;
+//             }
+//         }
+//     }
+//     section {
+//         text-align: left;
+//         h2 {
+//             font-size: 2rem;
+//         }
+//     }
+//     .reviews {
+//         &-content {
+//             .row {
+//                 margin: 0;
+//             }
+//         }
+//         &-txt {
+//             margin-top: 0;
+//             width: 100%;
+//             padding: 0;
+//         }
+//         &-item {
+//             width: 100%;
+//             padding: 30px;
+//         }
+//         &-title {
+//             margin-left: 0;
+//             max-width: 350px;
+//         }
+//         &-content {
+//             padding-left: 0;
+//             padding-right: 0;
+//         }
+//     }
+//     .reviews--center {
+//         width: 100%;
+//     }
+//     .product {
+//         &-title {
+//             text-align: center;
+//         }
+//         &-content {
+//             &__wrap {
+//                 text-align: center;
+//                 .row {
+//                     justify-content: space-evenly;
+//                     row-gap: 10px;
+//                 }
+//             }
+//         }
+//         &-item {
+//             width: 125px;
+//             min-width: auto;
+
+//             &__title {
+//                 font-size: 1.1rem;
+//             }
+//             &__text {
+//                 font-size: 0.9rem;
+//             }
+//         }
+//         &__price {
+//             font-size: 1.1rem;
+
+//             span {
+//                 font-size: 1.2rem;
+//             }
+//         }
+//     }
+//     .btn-product {
+//         font-size: 1rem;
+//     }
+//     .news {
+//         &-txt {
+//             width: 100%;
+//             text-align: center;
+//         }
+//         &-text {
+//             text-align: justify;
+//         }
+//         &-item {
+//             display: flex;
+//             flex-direction: column;
+//             max-width: 90%;
+//             row-gap: 10px;
+//             margin: auto;
+//             &__img {
+//                 width: 100%;
+//             }
+//             &__txt {
+//                 width: 100%;
+//             }
+//         }
+//     }
+//     .more-link {
+//         margin-top: 20px;
+//         padding: 8px 15px;
+//         position: relative;
+//         left: 50%;
+//         transform: translateX(-50%);
+//     }
+
+//     .security {
+//         &-item {
+//             max-width: 80%;
+//             display: flex;
+//             flex-direction: column;
+//             margin: auto;
+//             &__img {
+//                 width: 100%;
+//                 height: 100%;
+//                 img {
+//                     min-width: 100%;
+//                     height: 100%;
+//                 }
+//             }
+//             &__txt {
+//                 width: 100%;
+//                 padding: 20px;
+//                 margin-top: 0;
+//             }
+//             &__text {
+//                 width: 100%;
+//             }
+//         }
+//     }
+//     .features {
+//         &-item {
+//             &__txt {
+//                 width: auto;
+//             }
+//         }
+//     }
+//     .contact {
+//         &-img {
+//             display: none;
+//         }
+//     }
+// }

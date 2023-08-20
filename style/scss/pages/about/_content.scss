@@ -1,0 +1,100 @@
+.content {
+    position: relative;
+    img {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+    }
+    &-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5); 
+        z-index: -1;
+    }
+    &-txt {
+        margin-top: 20px;
+        color: $contentText;
+        position: relative;
+        margin-bottom: 50px;
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            width: 111.667px;
+            height: 86.667px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url("../../assets/images/pages/about/content-item.png");
+        }
+        &::before {
+            top: 45.83px;
+            left: -25px;
+            transform: translateX(-100%);   
+        }
+        &::after {
+            right: -17.5px;
+            bottom: -35.83px;
+            transform: translateX(100%) rotate(180deg);
+        }
+        &__text {
+            margin-top: 49.69px;
+            font-size: $fontSize;
+        }
+    }   
+}
+
+// <========== Responsive ==========>
+
+@media screen and (max-width: #{map-get($breakpoints, 'xxl')}px) {
+}
+@media screen and (max-width: #{map-get($breakpoints, 'xl')}px) {
+    .content {
+        &-txt {
+            &::before, &::after {
+                width: 74px;
+                height: 57px;
+            }
+            &::before {
+                top: 60px;
+                left: -10px;
+            }
+            &::after {
+                bottom: -25px;
+                right: -10px;
+            }
+        }
+    }
+}
+@media screen and (max-width: #{map-get($breakpoints, 'lg')}px) {
+    .content {
+        &-txt {
+            &::before, &::after {
+                width: 62px;
+                height: 48px;
+            }
+        }
+    }
+}
+@media screen and (max-width: #{map-get($breakpoints, 'md')}px) {
+    .content {
+        &-txt {
+            &::before, &::after {
+                display: none;
+            }
+            &__text {
+                text-align: justify;
+            }
+        }
+    }
+}
+@media screen and (max-width: #{map-get($breakpoints, 'sm')}px) {
+    .content {
+        &-txt {
+            &__title {
+                text-align: center;
+            }
+        }
+    }
+}
