@@ -48,6 +48,7 @@
         padding-bottom: 40px;
     }
 }
+
 .cart {
     &-link {
         position: relative;
@@ -74,6 +75,9 @@
     }
 }
 .search {
+    &-wrap {
+        display: none;
+    }
     &-icon {
         cursor: pointer;
         img {
@@ -82,7 +86,6 @@
         }
     }
     &-box {
-        display: none;
         border-radius: 10px;
         background-color: #fff;
         width: 300px;
@@ -148,16 +151,38 @@
     margin: auto;
     cursor: pointer;
     border-radius: 3px;
+    position: relative;
 
-    > i:nth-child(2) {
-        display: none;
-        font-size: 4rem;
-        font-weight: 900;
-    }
-    > i {
-        color: #535353;
-        vertical-align: middle;
-        font-size: 3.5rem;
+    &__icon {
+        display: inline-block;
+        width: 32px;
+        height: 4px;
+        background-color: rgb(0, 0, 0);
+        border-radius: 50px;
+        position: relative;
+        top: -50%;
+        translate: 0 100%;
+        transition: transform 0.4s ease-in-out;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0px;
+            display: inline-block;
+            width: inherit;
+            height: inherit;
+            background-color: inherit;
+            border-radius: inherit;
+            transform-origin: right;
+            transition: width 0.3s, top 0.1s, transform 0.6s;
+        }
+        &::before {
+            top: -220%;
+        }
+        &::after {
+            top: 220%;
+        }
     }
 }  
 .overlay {
@@ -201,12 +226,20 @@
     }
 }
 #menu-checkbox:checked ~ div > div > div > .btn-menu {
-    > i:nth-child(1) {
-        display: none;
+    .btn-menu__icon {
+        transform: rotate(135deg);
+        border-radius: 0;
+
+        &::before {
+            top: 0%;
+            border-radius: inherit;
+            transform: translateX(-50%) translateY(-400%) rotate(-90deg);
+        }
+        &::after {
+            visibility: hidden;
+        }
     }
-    > i:nth-child(2) {
-        display: inline-block;
-    }
+    
 }
 #menu-checkbox:checked + .overlay {
     visibility: visible;
@@ -221,14 +254,6 @@
 }
 #search-input:not(:placeholder-shown) ~ label {
     display: none;
-}
-#search-input:not(:placeholder-shown) ~ .search-box__icon {
-    > i {
-        display: none;
-    }
-    .search-reset {
-        display: inline-block;
-    }
 }
 
 // <========== Responsive ==========>
@@ -313,7 +338,7 @@
     .col--btn {
         display: inherit;
     }
-    .search-box {
+    .search-wrap {
         display: block;
     }
     .search-input {

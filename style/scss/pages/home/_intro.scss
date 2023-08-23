@@ -98,7 +98,7 @@
     .intro {
         &-image {
             position: relative;
-            margin: 0 calc(-1 * var(--column-space) / 2);
+            margin: 20px calc(-1 * var(--column-space) / 2) 0;
             padding: 25px 0;
         }
         &-img {

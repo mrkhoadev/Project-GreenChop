@@ -195,12 +195,11 @@
                 font-size: $sectionFontSize;
             }
             &__img {
-                margin-top: 35px;
-                width: 100%;
+                margin: 35px auto 0;
+                width: 90%;
                 border-radius: 8.333px;
                 overflow: hidden;
                 img {
-                    width: inherit;
                     margin-right: -1px;
                     border-radius: inherit;
                 }

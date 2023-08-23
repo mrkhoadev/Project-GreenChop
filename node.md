@@ -1,4 +1,4 @@
-cd "Projects(scss)/style"
+cd style
 sass scss:css --watch
 
 git add .
